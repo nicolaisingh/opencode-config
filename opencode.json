@@ -41,7 +41,9 @@
       "bd add *": "allow",
       "bd list *": "allow",
       "bd prime *": "allow",
-      "bd ready *": "allow"
+      "bd ready *": "allow",
+      "ls *": "allow",
+      "ls /*": "ask",
     },
     "doom_loop": "ask",
     "glob": "allow",
@@ -52,9 +54,8 @@
   "plugin": [
     "opencode-beads@0.6.0",
     "opencode-scheduler@1.3.0",
-    "context-mode@1.0.75"
-    // "@tarquinen/opencode-dcp@3.1.9",
-    // "opencode-plugin-openspec@0.1.4"
+    "context-mode@1.0.75",
+    "oh-my-opencode-slim@0.9.5"
   ],
   "provider": {
     "ollama": {
@@ -101,13 +102,24 @@
         },
         "translategemma:12b": {
           "name": "translategemma:12b"
-        }
+        },
+	"qwen3.5:397b-cloud": {
+	  "name": "qwen3.5:397b-cloud"
+	}
       },
       "name": "Ollama",
       "npm": "@ai-sdk/openai-compatible",
       "options": {
         "baseURL": "http://localhost:11434/v1"
       }
+    }
+  },
+  "agent": {
+    "explore": {
+      "disable": true
+    },
+    "general": {
+      "disable": true
     }
   }
 }

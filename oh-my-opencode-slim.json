@@ -1,0 +1,219 @@
+{
+  "$schema": "https://unpkg.com/oh-my-opencode-slim@latest/oh-my-opencode-slim.schema.json",
+  "council": {
+    "councillors_timeout": 180000,
+    "default_preset": "default",
+    "master": {
+      "model": "ollama/glm-5:cloud"
+    },
+    "master_timeout": 300000,
+    "presets": {
+      "compare": {
+        "analyst": {
+          "model": "ollama/minimax-m2.7:cloud"
+        },
+        "creative": {
+          "model": "google/gemma4:26b"
+        }
+      },
+      "copilot_default": {
+        "alpha": {
+          "model": "github-copilot/gpt-5.2"
+        },
+        "master": {
+          "model": "github-copilot/claude-sonnet-4.6"
+        }
+      },
+      "default": {
+        "alpha": {
+          "model": "ollama/minimax-m2.7:cloud"
+        },
+        "beta": {
+          "model": "ollama/kimi-k2.5:cloud"
+        },
+        "gamma": {
+          "model": "ollama/qwen3.5:397b-cloud"
+        }
+      },
+      "local-review-board": {
+        "architect": {
+          "model": "ollama/deepseek-coder-v2:16b",
+          "prompt": "You are a systems architect. Focus on design patterns, scalability, and maintainability."
+        },
+        "master": {
+          "model": "ollama/glm-5:cloud"
+        },
+        "master": {
+          "prompt": "Prioritise correctness and security over creativity. Flag any risks."
+        },
+        "optimiser": {
+          "model": "ollama/deepseek-coder-v2:16b",
+          "prompt": "You are a performance specialist. Focus on latency, throughput, and resource usage."
+        },
+        "reviewer": {
+          "model": "ollama/deepseek-coder-v2:16b",
+          "prompt": "You are a meticulous code reviewer. Focus on edge cases, error handling, and potential bugs."
+        }
+      },
+      "second-opinion": {
+        "reviewer": {
+          "model": "ollama/minimax-m2.7:cloud"
+        }
+      }
+    }
+  },
+  "multiplexer": {
+    "layout": "main-vertical",
+    "main_pane_size": 60,
+    "type": "tmux"
+  },
+  "preset": "ollama",
+  "presets": {
+    "copilot": {
+      "designer": {
+        "mcps": [],
+        "model": "github-copilot/gemini-3.1-pro-preview",
+        "skills": [
+          "agent-browser"
+        ],
+        "variant": "medium"
+      },
+      "explorer": {
+        "mcps": [],
+        "model": "github-copilot/grok-code-fast-1",
+        "skills": [],
+        "variant": "low"
+      },
+      "fixer": {
+        "mcps": [],
+        "model": "github-copilot/claude-sonnet-4.6",
+        "skills": [],
+        "variant": "low"
+      },
+      "librarian": {
+        "mcps": [
+          "websearch",
+          "context7",
+          "grep_app",
+          "gh-grep"
+        ],
+        "model": "github-copilot/grok-code-fast-1",
+        "skills": [],
+        "variant": "low"
+      },
+      "oracle": {
+        "mcps": [],
+        "model": "github-copilot/claude-opus-4.6",
+        "skills": [],
+        "variant": "high"
+      },
+      "orchestrator": {
+        "mcps": [
+          "*"
+        ],
+        "model": "github-copilot/claude-opus-4.6",
+        "skills": [
+          "*"
+        ],
+        "variant": "high"
+      }
+    },
+    "ollama": {
+      "designer": {
+        "mcps": [],
+        "model": "ollama/gemma4:26b",
+        "skills": [
+          "agent-browser"
+        ],
+        "variant": "medium"
+      },
+      "explorer": {
+        "mcps": [],
+        "model": "ollama/glm-4.7-flash:latest",
+        "skills": [],
+        "variant": "low"
+      },
+      "fixer": {
+        "mcps": [],
+        "model": "ollama/deepseek-coder-v2:16b",
+        "skills": [],
+        "variant": "low"
+      },
+      "librarian": {
+        "mcps": [
+          "websearch",
+          "context7",
+          "grep_app"
+        ],
+        "model": "ollama/glm-4.7-flash:latest",
+        "skills": [],
+        "variant": "low"
+      },
+      "oracle": {
+        "mcps": [],
+        "model": "ollama/glm-5:cloud",
+        "skills": [],
+        "variant": "high"
+      },
+      "orchestrator": {
+        "mcps": [
+          "*"
+        ],
+        "model": "ollama/minimax-m2.7:cloud",
+        "skills": [
+          "*"
+        ],
+        "variant": "high"
+      }
+    },
+    "openai": {
+      "designer": {
+        "mcps": [],
+        "model": "openai/gpt-5.4-mini",
+        "skills": [
+          "agent-browser"
+        ],
+        "variant": "medium"
+      },
+      "explorer": {
+        "mcps": [],
+        "model": "openai/gpt-5.4-mini",
+        "skills": [],
+        "variant": "low"
+      },
+      "fixer": {
+        "mcps": [],
+        "model": "openai/gpt-5.4-mini",
+        "skills": [],
+        "variant": "low"
+      },
+      "librarian": {
+        "mcps": [
+          "websearch",
+          "context7",
+          "grep_app"
+        ],
+        "model": "openai/gpt-5.4-mini",
+        "skills": [],
+        "variant": "low"
+      },
+      "oracle": {
+        "mcps": [],
+        "model": "openai/gpt-5.4",
+        "skills": [
+          "simplify"
+        ],
+        "variant": "high"
+      },
+      "orchestrator": {
+        "mcps": [
+          "*"
+        ],
+        "model": "openai/gpt-5.4",
+        "skills": [
+          "*"
+        ]
+      }
+    }
+  }
+}
