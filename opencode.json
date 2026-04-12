@@ -42,6 +42,8 @@
       "bd list *": "allow",
       "bd prime *": "allow",
       "bd ready *": "allow",
+      "bd create *": "allow",
+      "bd show *": "allow",
       "ls *": "allow",
       "ls /*": "ask",
     },
