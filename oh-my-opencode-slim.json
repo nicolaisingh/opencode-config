@@ -4,18 +4,10 @@
     "councillors_timeout": 180000,
     "default_preset": "default",
     "master": {
-      "model": "ollama/glm-5:cloud"
+      "model": "ollama/glm-5.1:cloud"
     },
     "master_timeout": 300000,
     "presets": {
-      "compare": {
-        "analyst": {
-          "model": "ollama/minimax-m2.7:cloud"
-        },
-        "creative": {
-          "model": "google/gemma4:26b"
-        }
-      },
       "copilot_default": {
         "alpha": {
           "model": "github-copilot/gpt-5.2"
@@ -26,38 +18,13 @@
       },
       "default": {
         "alpha": {
-          "model": "ollama/minimax-m2.7:cloud"
+          "model": "ollama/qwen3.5:cloud"
         },
         "beta": {
           "model": "ollama/kimi-k2.5:cloud"
         },
         "gamma": {
-          "model": "ollama/qwen3.5:397b-cloud"
-        }
-      },
-      "local-review-board": {
-        "architect": {
-          "model": "ollama/deepseek-coder-v2:16b",
-          "prompt": "You are a systems architect. Focus on design patterns, scalability, and maintainability."
-        },
-        "master": {
-          "model": "ollama/glm-5:cloud"
-        },
-        "master": {
-          "prompt": "Prioritise correctness and security over creativity. Flag any risks."
-        },
-        "optimiser": {
-          "model": "ollama/deepseek-coder-v2:16b",
-          "prompt": "You are a performance specialist. Focus on latency, throughput, and resource usage."
-        },
-        "reviewer": {
-          "model": "ollama/deepseek-coder-v2:16b",
-          "prompt": "You are a meticulous code reviewer. Focus on edge cases, error handling, and potential bugs."
-        }
-      },
-      "second-opinion": {
-        "reviewer": {
-          "model": "ollama/minimax-m2.7:cloud"
+          "model": "ollama/deepseek-v3.2:cloud"
         }
       }
     }
@@ -121,7 +88,7 @@
     "ollama": {
       "designer": {
         "mcps": [],
-        "model": "ollama/gemma4:26b",
+        "model": "ollama/qwen3-coder-next:cloud",
         "skills": [
           "agent-browser"
         ],
@@ -129,13 +96,15 @@
       },
       "explorer": {
         "mcps": [],
-        "model": "ollama/glm-4.7-flash:latest",
-        "skills": [],
+        "model": "ollama/qwen3-coder-next:cloud",
+        "skills": [
+          "cartography"
+        ],
         "variant": "low"
       },
       "fixer": {
         "mcps": [],
-        "model": "ollama/deepseek-coder-v2:16b",
+        "model": "ollama/qwen3-coder-next:cloud",
         "skills": [],
         "variant": "low"
       },
@@ -145,21 +114,24 @@
           "context7",
           "grep_app"
         ],
-        "model": "ollama/glm-4.7-flash:latest",
+        "model": "ollama/kimi-k2.5:cloud",
         "skills": [],
         "variant": "low"
       },
       "oracle": {
         "mcps": [],
-        "model": "ollama/glm-5:cloud",
-        "skills": [],
+        "model": "ollama/glm-5.1:cloud",
+        "skills": [
+          "simplify"
+        ],
         "variant": "high"
       },
       "orchestrator": {
         "mcps": [
-          "*"
+          "*",
+          "!context7"
         ],
-        "model": "ollama/minimax-m2.7:cloud",
+        "model": "ollama/glm-5.1:cloud",
         "skills": [
           "*"
         ],

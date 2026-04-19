@@ -1,5 +1,13 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "agent": {
+    "explore": {
+      "disable": true
+    },
+    "general": {
+      "disable": true
+    }
+  },
   "instructions": [
     "rules/context7.md",
     "rules/context-mode.md",
@@ -38,14 +46,11 @@
   "permission": {
     "bash": {
       "*": "ask",
-      "bd add *": "allow",
-      "bd list *": "allow",
-      "bd prime *": "allow",
-      "bd ready *": "allow",
-      "bd create *": "allow",
-      "bd show *": "allow",
+      "bd *": "deny",
+      "cat *": "allow",
+      "find *": "allow",
       "ls *": "allow",
-      "ls /*": "ask",
+      "ls /*": "ask"
     },
     "doom_loop": "ask",
     "glob": "allow",
@@ -57,13 +62,16 @@
     "opencode-beads@0.6.0",
     "opencode-scheduler@1.3.0",
     "context-mode@1.0.75",
-    "oh-my-opencode-slim@0.9.5"
+    "oh-my-opencode-slim@0.9.15"
   ],
   "provider": {
     "ollama": {
       "models": {
         "deepseek-coder-v2:16b": {
           "name": "deepseek-coder-v2:16b"
+        },
+        "deepseek-v3.2:cloud": {
+          "name": "deepseek-v3.2:cloud"
         },
         "gemma4:26b": {
           "name": "gemma4:26b"
@@ -75,12 +83,8 @@
           },
           "name": "glm-4.7-flash:latest"
         },
-        "glm-5:cloud": {
-          "limit": {
-            "context": 204800,
-            "output": 131702
-          },
-          "name": "glm-5:cloud"
+        "glm-5.1:cloud": {
+          "name": "glm-5.1:cloud"
         },
         "kimi-k2.5:cloud": {
           "limit": {
@@ -99,29 +103,27 @@
           },
           "name": "minimax-m2.7:cloud"
         },
+        "qwen3-coder-next:cloud": {
+          "name": "qwen3-coder-next:cloud"
+        },
         "qwen3-coder:latest": {
           "name": "qwen3-coder:latest"
         },
+        "qwen3.5:397b-cloud": {
+          "name": "qwen3.5:397b-cloud"
+        },
+        "qwen3.5:cloud": {
+          "name": "qwen3.5:cloud"
+        },
         "translategemma:12b": {
           "name": "translategemma:12b"
-        },
-	"qwen3.5:397b-cloud": {
-	  "name": "qwen3.5:397b-cloud"
-	}
+        }
       },
       "name": "Ollama",
       "npm": "@ai-sdk/openai-compatible",
       "options": {
         "baseURL": "http://localhost:11434/v1"
       }
-    }
-  },
-  "agent": {
-    "explore": {
-      "disable": true
-    },
-    "general": {
-      "disable": true
     }
   }
 }
