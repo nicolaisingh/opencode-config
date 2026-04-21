@@ -10,10 +10,13 @@
     "presets": {
       "copilot_default": {
         "alpha": {
-          "model": "github-copilot/gpt-5.2"
+          "model": "github-copilot/claude-opus-4.6"
+        },
+        "beta": {
+          "model": "github-copilot/gemini-2.5-pro"
         },
         "master": {
-          "model": "github-copilot/claude-sonnet-4.6"
+          "model": "github-copilot/gpt-5.4"
         }
       },
       "default": {
@@ -48,7 +51,9 @@
       "explorer": {
         "mcps": [],
         "model": "github-copilot/grok-code-fast-1",
-        "skills": [],
+        "skills": [
+          "cartography"
+        ],
         "variant": "low"
       },
       "fixer": {
@@ -62,7 +67,8 @@
           "websearch",
           "context7",
           "grep_app",
-          "gh-grep"
+          "gh-grep",
+          "atlassian-rovo-mcp"
         ],
         "model": "github-copilot/grok-code-fast-1",
         "skills": [],
@@ -70,19 +76,21 @@
       },
       "oracle": {
         "mcps": [],
-        "model": "github-copilot/claude-opus-4.6",
-        "skills": [],
+        "model": "github-copilot/gpt-5.4",
+        "skills": [
+          "simplify"
+        ],
         "variant": "high"
       },
       "orchestrator": {
         "mcps": [
-          "*"
+          "*",
+          "!context7"
         ],
-        "model": "github-copilot/claude-opus-4.6",
+        "model": "github-copilot/gpt-5.4",
         "skills": [
           "*"
-        ],
-        "variant": "high"
+        ]
       }
     },
     "ollama": {

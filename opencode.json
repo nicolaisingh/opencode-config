@@ -14,6 +14,11 @@
     "rules/gh-grep.md"
   ],
   "mcp": {
+    "atlassian-rovo-mcp": {
+      "enabled": false,
+      "type": "remote",
+      "url": "https://mcp.atlassian.com/v1/mcp"
+    },
     "context-mode": {
       "command": [
         "context-mode"
@@ -44,11 +49,13 @@
   },
   "model": "ollama/minimax-m2.7:cloud",
   "permission": {
+    "atlassian-rovo-mcp_*": "ask",
     "bash": {
       "*": "ask",
       "bd *": "deny",
       "cat *": "allow",
       "find *": "allow",
+      "head *": "allow",
       "ls *": "allow",
       "ls /*": "ask"
     },
