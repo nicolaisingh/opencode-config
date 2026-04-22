@@ -47,7 +47,7 @@
       "type": "local"
     }
   },
-  "model": "ollama/minimax-m2.7:cloud",
+  "model": "kimi/minimax-m2.7:cloud",
   "permission": {
     "atlassian-rovo-mcp_*": "ask",
     "bash": {
@@ -69,7 +69,6 @@
     "opencode-beads@0.6.0",
     "opencode-scheduler@1.3.0",
     "context-mode@1.0.75",
-    "oh-my-opencode-slim@0.9.15"
   ],
   "provider": {
     "ollama": {

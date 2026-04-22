@@ -2,9 +2,9 @@
   "$schema": "https://unpkg.com/oh-my-opencode-slim@latest/oh-my-opencode-slim.schema.json",
   "council": {
     "councillors_timeout": 180000,
-    "default_preset": "default",
+    "default_preset": "kimi",
     "master": {
-      "model": "ollama/glm-5.1:cloud"
+      "model": "kimi-for-coding/k2p6"
     },
     "master_timeout": 300000,
     "presets": {
@@ -19,7 +19,16 @@
           "model": "github-copilot/gpt-5.4"
         }
       },
-      "default": {
+      "kimi": {
+        "alpha": {
+          "model": "kimi-for-coding/k2p6"
+        },
+        "beta": {
+          "model": "kimi-for-coding/k2p6"
+        },
+
+      },
+      "ollama": {
         "alpha": {
           "model": "ollama/qwen3.5:cloud"
         },
@@ -37,7 +46,7 @@
     "main_pane_size": 60,
     "type": "tmux"
   },
-  "preset": "ollama",
+  "preset": "kimi",
   "presets": {
     "copilot": {
       "designer": {
@@ -91,6 +100,61 @@
         "skills": [
           "*"
         ]
+      }
+    },
+    "kimi": {
+      "designer": {
+        "mcps": [],
+        "model": "kimi-for-coding/k2p6",
+        "skills": [
+          "agent-browser"
+        ],
+        "variant": "medium"
+      },
+      "explorer": {
+        "mcps": [],
+        "model": "kimi-for-coding/k2p6",
+        "skills": [
+          "cartography"
+        ],
+        "variant": "low"
+      },
+      "fixer": {
+        "mcps": [],
+        "model": "kimi-for-coding/k2p6",
+        "skills": [],
+        "variant": "low"
+      },
+      "librarian": {
+        "mcps": [
+          "websearch",
+          "context7",
+          "grep_app",
+          "gh-grep",
+          "atlassian-rovo-mcp"
+        ],
+        "model": "kimi-for-coding/k2p6",
+        "skills": [],
+        "variant": "low"
+      },
+      "oracle": {
+        "mcps": [],
+        "model": "kimi-for-coding/k2p6",
+        "skills": [
+          "simplify"
+        ],
+        "variant": "high"
+      },
+      "orchestrator": {
+        "mcps": [
+          "*",
+          "!context7"
+        ],
+        "model": "kimi-for-coding/k2p6",
+        "skills": [
+          "*"
+        ],
+        "variant": "high"
       }
     },
     "ollama": {
